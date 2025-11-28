@@ -1,0 +1,26 @@
+# PROVIDER_MAPPING_SQL_MVP.yaml
+# SQL Provider Mapping — MVP Edition
+# Путь: /PROVIDER_MAPPING_SQL_MVP.yaml
+
+# Назначение:
+# Описывает маршрутизацию action → driver_method
+# для SQL Provider в L1/MVP.
+
+sql.fetch:
+  driver: sql
+  driver_method: fetch_record
+  params:
+    - table
+    - id
+
+sql.list:
+  driver: sql
+  driver_method: list_records
+  params:
+    - table
+
+sql.query:
+  driver: sql
+  driver_method: execute_query
+  params:
+    - sql
