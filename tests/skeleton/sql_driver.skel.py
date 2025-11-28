@@ -1,29 +1,37 @@
 
-"""SQL Driver Skeleton
+"""tests/skeleton/sql_driver.skel.py
 
-(второй драйвер для L1 — демонстрация multi-provider)
+(полная версия)
 
-tests/skeleton/sql_driver.skel.py
+sql_driver.skel.py — Skeleton SQL Driver (L1)
 
-sql_driver.skel.py — Skeleton для SQL Driver (провайдер #2)
 Путь назначения: src/drivers/sql_driver.py
+Каталог хранения skeleton: tests/skeleton/sql_driver.skel.py
 
 Назначение:
- - Демонстрационный драйвер, эмулирующий доступ к SQL-базе.
- - Используется для L1 как второй провайдер.
- - Логика не реализована — только структура.
+  SQL Driver — второй провайдер уровня L1.
+  Используется для демонстрации multi-provider маршрутизации:
+    Ticket Provider + SQL Provider.
 
-Методы:
- - execute_query(sql: str) — выполнить SQL-запрос
- - fetch_record(table: str, id: str) — получить запись
- - list_records(table: str) — список записей
+Функциональные обязанности:
+  - обработка действий:
+      sql.fetch
+      sql.list
+      sql.query
+  - возвращает RAW-ответ, который позже будет нормализован.
+
+Методы (будущая реализация):
+  - fetch_record(table: str, id: str)
+  - list_records(table: str)
+  - execute_query(sql: str)
 
 Вход:
- - текст SQL или параметры выборки
+  - параметры params из UQP (table, id, sql)
 
 Выход:
- - raw результат, который будет нормализован
+  - raw provider response в формате dict
 """
 
 def skeleton_info():
+    """Заглушка — файл skeleton."""
     pass
