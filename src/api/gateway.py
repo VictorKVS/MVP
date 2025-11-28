@@ -11,6 +11,11 @@ gateway.py — API Gateway (MVP/L1++)
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
+from src.observability.middleware import observability_middleware
+app.middleware("http")(observability_middleware)
+
+
+
 from src.security.apikey import validate_api_key
 from src.security.sanitizer import sanitize_params
 from src.security.jwt_auth import validate_jwt, extract_role
@@ -20,7 +25,8 @@ from src.router.router import route_request
 from src.logging.audit_log import audit
 
 
-app = FastAPI(title="UAG_MVP_L1")
+app = FastAPIsrc/api/gateway.py
+(title="UAG_MVP_L1")
 
 
 @app.post("/api/v1/query")
