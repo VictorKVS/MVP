@@ -1,13 +1,28 @@
-"""4) Опционально: skeleton JWT authentication
+"""2) JWT Authentication Skeleton
 
-jwt_auth.skel.py — Skeleton JWT Auth
+(базовый Security Layer L1 — упрощённый)
+
+tests/skeleton/jwt_auth.skel.py
+
+
+jwt_auth.skel.py — Skeleton для JWT Authentication
 Путь назначения: src/security/jwt_auth.py
 
 Назначение:
- - Минимальная JWT-проверка для L1 расширенной версии
+ - Проверка JWT-токена (верификация подписи не реализована)
+ - Минимальный вариант L1 (JWT-lite)
+ - Используется совместно с RBAC-lite
 
 Методы:
- - validate_jwt(token)
+ - decode_jwt(token: str) -> dict | None
+ - validate_jwt(token: str) -> bool
+
+Вход:
+ - JWT-токен (строка)
+
+Выход:
+ - декодированный payload или None
+ - результат валидации True/False
 """
 
 def skeleton_info():
